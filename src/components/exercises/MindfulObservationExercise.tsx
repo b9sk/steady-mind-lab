@@ -19,8 +19,13 @@ export const MindfulObservationExercise = ({ onComplete, duration = 600 }: Mindf
     "Отметьте физические ощущения в теле",
     "Наблюдайте эмоции как облака на небе",
     "Просто будьте здесь и сейчас",
-    "Заметьте звуки, не анализируя их",
-    "Вернитесь к дыханию, если отвлеклись"
+    "Заметьте звуки вокруг вас",
+    "Почувствуйте точки контакта тела с поверхностью",
+    "Отпустите желание что-то изменить",
+    "Вернитесь к дыханию, если отвлеклись",
+    "Заметьте температуру воздуха на коже",
+    "Наблюдайте паузу между вдохом и выдохом",
+    "Примите этот момент таким, какой он есть"
   ];
 
   useEffect(() => {
@@ -35,7 +40,7 @@ export const MindfulObservationExercise = ({ onComplete, duration = 600 }: Mindf
 
     const promptTimer = setInterval(() => {
       setCurrentPrompt((prev) => (prev + 1) % prompts.length);
-    }, duration / prompts.length * 1000);
+    }, 50000); // 50 секунд на каждую подсказку
 
     return () => {
       clearInterval(timer);
@@ -70,7 +75,10 @@ export const MindfulObservationExercise = ({ onComplete, duration = 600 }: Mindf
             <p className="text-5xl font-bold">
               {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
             </p>
-            <p className="text-lg text-muted-foreground max-w-md mx-auto min-h-[3rem] flex items-center justify-center">
+            <p 
+              key={currentPrompt}
+              className="text-lg text-muted-foreground max-w-md mx-auto min-h-[3rem] flex items-center justify-center animate-fade-in"
+            >
               {prompts[currentPrompt]}
             </p>
           </div>
