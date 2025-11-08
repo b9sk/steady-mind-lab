@@ -42,7 +42,7 @@ export const MindfulObservationExercise = ({ onComplete, duration = 600 }: Mindf
 
     const promptTimer = setInterval(() => {
       setCurrentPrompt((prev) => (prev + 1) % prompts.length);
-    }, 50000); // 50 секунд на каждую подсказку
+    }, 30000); // 30 секунд на каждую подсказку
 
     return () => {
       clearInterval(timer);
