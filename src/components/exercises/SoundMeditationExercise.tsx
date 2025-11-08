@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Volume2 } from "lucide-react";
+import { useWakeLock } from "@/hooks/use-wake-lock";
 
 interface SoundMeditationExerciseProps {
   onComplete: () => void;
@@ -9,6 +10,7 @@ interface SoundMeditationExerciseProps {
 }
 
 export const SoundMeditationExercise = ({ onComplete, duration = 300 }: SoundMeditationExerciseProps) => {
+  useWakeLock();
   const [timeLeft, setTimeLeft] = useState(duration);
   const [isPaused, setIsPaused] = useState(false);
   const [currentSound, setCurrentSound] = useState(0);

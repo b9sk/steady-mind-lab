@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useWakeLock } from "@/hooks/use-wake-lock";
 
 interface BreathingExerciseProps {
   onComplete: () => void;
@@ -10,6 +11,7 @@ interface BreathingExerciseProps {
 type Phase = "inhale" | "hold1" | "exhale" | "hold2";
 
 export const BreathingExercise = ({ onComplete, duration = 300 }: BreathingExerciseProps) => {
+  useWakeLock();
   const [phase, setPhase] = useState<Phase>("inhale");
   const [countdown, setCountdown] = useState(4);
   const [cycle, setCycle] = useState(0);

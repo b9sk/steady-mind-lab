@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Brain } from "lucide-react";
+import { useWakeLock } from "@/hooks/use-wake-lock";
 
 interface MindfulObservationExerciseProps {
   onComplete: () => void;
@@ -9,6 +10,7 @@ interface MindfulObservationExerciseProps {
 }
 
 export const MindfulObservationExercise = ({ onComplete, duration = 600 }: MindfulObservationExerciseProps) => {
+  useWakeLock();
   const [timeLeft, setTimeLeft] = useState(duration);
   const [isPaused, setIsPaused] = useState(false);
   const [currentPrompt, setCurrentPrompt] = useState(0);

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useWakeLock } from "@/hooks/use-wake-lock";
 
 interface VisualFocusExerciseProps {
   onComplete: () => void;
@@ -8,6 +9,7 @@ interface VisualFocusExerciseProps {
 }
 
 export const VisualFocusExercise = ({ onComplete, duration = 180 }: VisualFocusExerciseProps) => {
+  useWakeLock();
   const [timeLeft, setTimeLeft] = useState(duration);
   const [isPaused, setIsPaused] = useState(false);
 
