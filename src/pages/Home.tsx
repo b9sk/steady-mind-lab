@@ -9,16 +9,18 @@ const Home = () => {
   
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-      <div className="container max-w-4xl mx-auto px-4 py-8 space-y-8">
+      <div className="container max-w-4xl mx-auto px-4 py-4 md:py-6 space-y-6">
         {/* Header */}
-        <header className="text-center space-y-4 animate-fade-in">
-          <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 mb-2">
-            <Sparkles className="h-8 w-8 text-primary" />
+        <header className="text-center space-y-2 animate-fade-in">
+          <div>
+            <div className="inline-flex items-center justify-center p-2 rounded-xl bg-gradient-to-br from-primary/10 to-accent/10 mb-1">
+              <Sparkles className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+            </div>
+            <h1 className="text-2xl px-2 md:text-3xl font-bold tracking-tight inline-block">
+              {t('app.title')}
+            </h1>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            {t('app.title')}
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto">
             {t('app.subtitle')}
           </p>
         </header>
@@ -45,7 +47,7 @@ const Home = () => {
         </section>
 
         {/* Info */}
-        <section className="text-center space-y-3 py-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        <section className="text-center space-y-3 py-4 md:py-6 animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
             {t('home.infoText')}
           </p>
