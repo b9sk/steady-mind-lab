@@ -40,15 +40,22 @@ export const MindfulObservationExercise = ({ onComplete, duration = 600 }: Mindf
       setTimeLeft((prev) => prev - 1);
     }, 1000);
 
+    return () => {
+      clearInterval(timer);
+    };
+  }, [isPaused, timeLeft, onComplete]);
+
+  useEffect(() => {
+    if (isPaused) return;
+
     const promptTimer = setInterval(() => {
       setCurrentPrompt((prev) => (prev + 1) % prompts.length);
     }, 30000); // 30 секунд на каждую подсказку
 
     return () => {
-      clearInterval(timer);
       clearInterval(promptTimer);
     };
-  }, [isPaused, timeLeft, onComplete, duration, prompts.length]);
+  }, [isPaused, prompts.length]);
 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
