@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useWakeLock } from "@/hooks/use-wake-lock";
+import { useTranslation } from "react-i18next";
 
 interface BreathingExerciseProps {
   onComplete: () => void;
@@ -12,16 +13,17 @@ type Phase = "inhale" | "hold1" | "exhale" | "hold2";
 
 export const BreathingExercise = ({ onComplete, duration = 300 }: BreathingExerciseProps) => {
   useWakeLock();
+  const { t } = useTranslation();
   const [phase, setPhase] = useState<Phase>("inhale");
   const [countdown, setCountdown] = useState(4);
   const [cycle, setCycle] = useState(0);
   const totalCycles = Math.floor(duration / 20); // ~20 секунд на цикл
 
   const phaseData = {
-    inhale: { text: "Вдох", duration: 4, next: "hold1" as Phase },
-    hold1: { text: "Задержите", duration: 7, next: "exhale" as Phase },
-    exhale: { text: "Выдох", duration: 8, next: "hold2" as Phase },
-    hold2: { text: "Пауза", duration: 1, next: "inhale" as Phase },
+    inhale: { text: t('breathing.inhale'), duration: 4, next: "hold1" as Phase },
+    hold1: { text: t('breathing.hold'), duration: 7, next: "exhale" as Phase },
+    exhale: { text: t('breathing.exhale'), duration: 8, next: "hold2" as Phase },
+    hold2: { text: t('breathing.hold'), duration: 1, next: "inhale" as Phase },
   };
 
   useEffect(() => {
@@ -59,7 +61,7 @@ export const BreathingExercise = ({ onComplete, duration = 300 }: BreathingExerc
         <div className="text-center space-y-8">
           <div className="space-y-2">
             <p className="text-sm text-muted-foreground">
-              Цикл {cycle + 1} из {totalCycles}
+              {t('breathing.cycle', { current: cycle + 1, total: totalCycles }) || `${cycle + 1} / ${totalCycles}`}
             </p>
             <div className="w-full bg-muted rounded-full h-2">
               <div
@@ -93,14 +95,14 @@ export const BreathingExercise = ({ onComplete, duration = 300 }: BreathingExerc
           </div>
 
           <div className="space-y-2">
-            <p className="text-lg font-medium">Техника 4-7-8</p>
+            <p className="text-lg font-medium">4-7-8</p>
             <p className="text-sm text-muted-foreground max-w-md mx-auto">
-              Вдох через нос на 4 счёта, задержка на 7 счётов, выдох через рот на 8 счётов
+              {t('breathing.description')}
             </p>
           </div>
 
           <Button variant="outline" onClick={onComplete}>
-            Завершить досрочно
+            {t('breathing.complete')}
           </Button>
         </div>
       </CardContent>

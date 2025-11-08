@@ -1,8 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { getTodaySessions, getTotalSessions } from "@/lib/storage";
 import { CheckCircle2, Flame } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export const ProgressStats = () => {
+  const { t } = useTranslation();
   const todaySessions = getTodaySessions().length;
   const totalSessions = getTotalSessions();
 
@@ -16,7 +18,7 @@ export const ProgressStats = () => {
             </div>
             <div>
               <p className="text-2xl font-bold">{todaySessions}</p>
-              <p className="text-sm text-muted-foreground">Сегодня</p>
+              <p className="text-sm text-muted-foreground">{t('stats.today')}</p>
             </div>
           </div>
         </CardContent>
@@ -30,7 +32,7 @@ export const ProgressStats = () => {
             </div>
             <div>
               <p className="text-2xl font-bold">{totalSessions}</p>
-              <p className="text-sm text-muted-foreground">Всего</p>
+              <p className="text-sm text-muted-foreground">{t('stats.total')}</p>
             </div>
           </div>
         </CardContent>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Exercise } from "@/types/exercise";
 import { Wind, Eye, Music, Brain, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 interface ExerciseCardProps {
   exercise: Exercise;
@@ -17,6 +18,7 @@ const iconMap = {
 
 export const ExerciseCard = ({ exercise }: ExerciseCardProps) => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const Icon = iconMap[exercise.icon as keyof typeof iconMap];
 
   return (
@@ -28,19 +30,19 @@ export const ExerciseCard = ({ exercise }: ExerciseCardProps) => {
           </div>
           {exercise.duration && (
             <span className="text-sm text-muted-foreground">
-              {Math.floor(exercise.duration / 60)} мин
+              {Math.floor(exercise.duration / 60)} {t('exercise.minutes')}
             </span>
           )}
         </div>
-        <CardTitle className="mt-4">{exercise.title}</CardTitle>
-        <CardDescription>{exercise.description}</CardDescription>
+        <CardTitle className="mt-4">{t(`exercises.${exercise.id}.title`)}</CardTitle>
+        <CardDescription>{t(`exercises.${exercise.id}.description`)}</CardDescription>
       </CardHeader>
       <CardContent>
         <Button 
           onClick={() => navigate(`/exercise/${exercise.id}`)}
           className="w-full group"
         >
-          Начать
+          {t('exercise.start')}
           <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Button>
       </CardContent>

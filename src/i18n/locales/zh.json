@@ -1,0 +1,108 @@
+{
+  "app": {
+    "title": "专注力",
+    "subtitle": "简单的练习帮助恢复注意力并减轻压力"
+  },
+  "home": {
+    "exercises": "练习",
+    "infoText": "定期练习这些练习将帮助您恢复注意力，减少慢性压力并改善整体健康"
+  },
+  "stats": {
+    "today": "今天",
+    "total": "总计"
+  },
+  "exercise": {
+    "start": "开始",
+    "startExercise": "开始练习",
+    "back": "返回",
+    "completed": "练习完成！",
+    "completedMessage": "做得好！定期练习将帮助您提高注意力。",
+    "backToHome": "返回首页",
+    "benefits": "练习的好处：",
+    "duration": "时长：{{minutes}} 分钟",
+    "minutes": "分钟"
+  },
+  "exercises": {
+    "breathing-478": {
+      "title": "4-7-8 呼吸法",
+      "description": "减轻压力和改善注意力的呼吸技巧",
+      "benefits": [
+        "降低压力和焦虑水平",
+        "帮助平静神经系统",
+        "改善睡眠质量",
+        "提高注意力能力"
+      ]
+    },
+    "visual-focus": {
+      "title": "视觉专注",
+      "description": "训练持续注意力的练习",
+      "benefits": [
+        "发展注意力的持续性",
+        "改善视觉注意力",
+        "训练保持专注的能力",
+        "提高正念"
+      ]
+    },
+    "sound-meditation": {
+      "title": "声音冥想",
+      "description": "专注聆听练习以发展注意力",
+      "benefits": [
+        "发展听觉注意力",
+        "提高辨别细节的能力",
+        "平静心灵",
+        "训练正念存在"
+      ]
+    },
+    "mindful-observation": {
+      "title": "正念观察",
+      "description": "不带反应地观察思想和感觉的练习",
+      "benefits": [
+        "发展元认知技能",
+        "改善情绪调节",
+        "减少冲动性",
+        "提高整体正念"
+      ]
+    }
+  },
+  "breathing": {
+    "inhale": "吸气",
+    "hold": "屏息",
+    "exhale": "呼气",
+    "description": "跟随呼吸节奏：吸气4秒，屏息7秒，呼气8秒",
+    "complete": "完成"
+  },
+  "visualFocus": {
+    "instruction": "将目光集中在中心点上。尽量保持稳定的注意力而不分心。",
+    "pause": "暂停",
+    "continue": "继续",
+    "complete": "完成"
+  },
+  "soundMeditation": {
+    "instruction": "闭上眼睛，专注于声音。不要分析它们，只需注意它们。",
+    "pause": "暂停",
+    "continue": "继续",
+    "complete": "完成",
+    "sounds": [
+      "注意远处的声音",
+      "注意附近的声音",
+      "注意你身体内部的声音",
+      "注意声音之间的寂静",
+      "回到远处的声音",
+      "将所有声音作为一个整体来观察"
+    ]
+  },
+  "mindfulObservation": {
+    "instruction": "舒适地坐着，闭上眼睛，不带评判地观察你的内在体验。",
+    "pause": "暂停",
+    "continue": "继续",
+    "complete": "完成",
+    "prompts": [
+      "只需观察你的呼吸",
+      "注意你身体中的感觉",
+      "将你的思想看作天空中的云朵",
+      "不带执着地观察情绪",
+      "将注意力带回呼吸",
+      "观察思想之间的空间"
+    ]
+  }
+}

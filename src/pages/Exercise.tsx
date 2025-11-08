@@ -9,6 +9,7 @@ import { BreathingExercise } from "@/components/exercises/BreathingExercise";
 import { VisualFocusExercise } from "@/components/exercises/VisualFocusExercise";
 import { SoundMeditationExercise } from "@/components/exercises/SoundMeditationExercise";
 import { MindfulObservationExercise } from "@/components/exercises/MindfulObservationExercise";
+import { useTranslation } from "react-i18next";
 
 const exerciseComponents = {
   "breathing-478": BreathingExercise,
@@ -20,6 +21,7 @@ const exerciseComponents = {
 const Exercise = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const exercise = exercises.find((e) => e.id === id);
   const [started, setStarted] = useState(false);
   const [completed, setCompleted] = useState(false);
@@ -53,24 +55,24 @@ const Exercise = () => {
           className="mb-6"
         >
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Назад
+          {t('exercise.back')}
         </Button>
 
         {!started && !completed && (
           <div className="space-y-6 animate-fade-in">
             <Card>
               <CardHeader>
-                <CardTitle className="text-3xl">{exercise.title}</CardTitle>
+                <CardTitle className="text-3xl">{t(`exercises.${exercise.id}.title`)}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <p className="text-lg text-muted-foreground">
-                  {exercise.description}
+                  {t(`exercises.${exercise.id}.description`)}
                 </p>
 
                 <div>
-                  <h3 className="font-semibold mb-3">Польза упражнения:</h3>
+                  <h3 className="font-semibold mb-3">{t('exercise.benefits')}</h3>
                   <ul className="space-y-2">
-                    {exercise.benefits.map((benefit, index) => (
+                    {(t(`exercises.${exercise.id}.benefits`, { returnObjects: true }) as string[]).map((benefit, index) => (
                       <li key={index} className="flex items-start">
                         <CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-muted-foreground">{benefit}</span>
@@ -81,7 +83,7 @@ const Exercise = () => {
 
                 {exercise.duration && (
                   <p className="text-sm text-muted-foreground">
-                    Длительность: {Math.floor(exercise.duration / 60)} минут
+                    {t('exercise.duration', { minutes: Math.floor(exercise.duration / 60) })}
                   </p>
                 )}
 
@@ -90,7 +92,7 @@ const Exercise = () => {
                   size="lg"
                   className="w-full"
                 >
-                  Начать упражнение
+                  {t('exercise.startExercise')}
                 </Button>
               </CardContent>
             </Card>
@@ -107,12 +109,12 @@ const Exercise = () => {
               <div className="inline-flex items-center justify-center p-4 rounded-full bg-primary/10 mb-4">
                 <CheckCircle className="h-12 w-12 text-primary" />
               </div>
-              <h2 className="text-3xl font-bold">Упражнение завершено!</h2>
+              <h2 className="text-3xl font-bold">{t('exercise.completed')}</h2>
               <p className="text-muted-foreground">
-                Отличная работа! Регулярная практика поможет вам улучшить концентрацию.
+                {t('exercise.completedMessage')}
               </p>
               <Button onClick={() => navigate("/")} size="lg">
-                Вернуться на главную
+                {t('exercise.backToHome')}
               </Button>
             </CardContent>
           </Card>

@@ -1,0 +1,108 @@
+{
+  "app": {
+    "title": "Atención",
+    "subtitle": "Ejercicios simples para restaurar la concentración y reducir el estrés"
+  },
+  "home": {
+    "exercises": "Ejercicios",
+    "infoText": "La práctica regular de estos ejercicios te ayudará a restaurar la atención, reducir el estrés crónico y mejorar el bienestar general"
+  },
+  "stats": {
+    "today": "Hoy",
+    "total": "Total"
+  },
+  "exercise": {
+    "start": "Comenzar",
+    "startExercise": "Comenzar ejercicio",
+    "back": "Atrás",
+    "completed": "¡Ejercicio completado!",
+    "completedMessage": "¡Excelente trabajo! La práctica regular te ayudará a mejorar tu concentración.",
+    "backToHome": "Volver al inicio",
+    "benefits": "Beneficios del ejercicio:",
+    "duration": "Duración: {{minutes}} minutos",
+    "minutes": "min"
+  },
+  "exercises": {
+    "breathing-478": {
+      "title": "Respiración 4-7-8",
+      "description": "Técnica de respiración para reducir el estrés y mejorar la concentración",
+      "benefits": [
+        "Reduce los niveles de estrés y ansiedad",
+        "Ayuda a calmar el sistema nervioso",
+        "Mejora la calidad del sueño",
+        "Aumenta la capacidad de concentración"
+      ]
+    },
+    "visual-focus": {
+      "title": "Enfoque Visual",
+      "description": "Ejercicio para entrenar la atención sostenida",
+      "benefits": [
+        "Desarrolla la sostenibilidad de la atención",
+        "Mejora la concentración visual",
+        "Entrena la capacidad de retener el enfoque",
+        "Aumenta la atención plena"
+      ]
+    },
+    "sound-meditation": {
+      "title": "Meditación de Sonido",
+      "description": "Práctica de escucha atenta para desarrollar la concentración",
+      "benefits": [
+        "Desarrolla la atención auditiva",
+        "Mejora la capacidad de distinguir detalles",
+        "Calma la mente",
+        "Entrena la presencia consciente"
+      ]
+    },
+    "mindful-observation": {
+      "title": "Observación Consciente",
+      "description": "Práctica de observar pensamientos y sensaciones sin reacción",
+      "benefits": [
+        "Desarrolla habilidades metacognitivas",
+        "Mejora la regulación emocional",
+        "Reduce la impulsividad",
+        "Aumenta la atención plena general"
+      ]
+    }
+  },
+  "breathing": {
+    "inhale": "Inhalar",
+    "hold": "Mantener",
+    "exhale": "Exhalar",
+    "description": "Sigue el ritmo de respiración: inhala durante 4 segundos, mantén durante 7 segundos, exhala durante 8 segundos",
+    "complete": "Completar"
+  },
+  "visualFocus": {
+    "instruction": "Enfoca tu mirada en el punto central. Intenta mantener una atención constante sin distracciones.",
+    "pause": "Pausar",
+    "continue": "Continuar",
+    "complete": "Completar"
+  },
+  "soundMeditation": {
+    "instruction": "Cierra los ojos y concéntrate en los sonidos. No los analices, solo obsérvalos.",
+    "pause": "Pausar",
+    "continue": "Continuar",
+    "complete": "Completar",
+    "sounds": [
+      "Nota los sonidos distantes",
+      "Nota los sonidos cercanos",
+      "Nota los sonidos dentro de tu cuerpo",
+      "Nota el silencio entre los sonidos",
+      "Regresa a los sonidos distantes",
+      "Observa todos los sonidos como un todo"
+    ]
+  },
+  "mindfulObservation": {
+    "instruction": "Siéntate cómodamente, cierra los ojos y observa tu experiencia interna sin juicio.",
+    "pause": "Pausar",
+    "continue": "Continuar",
+    "complete": "Completar",
+    "prompts": [
+      "Simplemente observa tu respiración",
+      "Nota las sensaciones en tu cuerpo",
+      "Nota tus pensamientos como nubes en el cielo",
+      "Observa las emociones sin apego",
+      "Regresa la atención a la respiración",
+      "Observa el espacio entre los pensamientos"
+    ]
+  }
+}

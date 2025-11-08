@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Volume2 } from "lucide-react";
 import { useWakeLock } from "@/hooks/use-wake-lock";
+import { useTranslation } from "react-i18next";
 
 interface SoundMeditationExerciseProps {
   onComplete: () => void;
@@ -11,17 +12,12 @@ interface SoundMeditationExerciseProps {
 
 export const SoundMeditationExercise = ({ onComplete, duration = 300 }: SoundMeditationExerciseProps) => {
   useWakeLock();
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = useState(duration);
   const [isPaused, setIsPaused] = useState(false);
   const [currentSound, setCurrentSound] = useState(0);
 
-  const sounds = [
-    "Прислушайтесь к звукам вокруг вас",
-    "Заметьте самый громкий звук",
-    "Найдите самый тихий звук",
-    "Услышьте звук своего дыхания",
-    "Различите отдельные звуки в общем шуме"
-  ];
+  const sounds = t('soundMeditation.sounds', { returnObjects: true }) as string[];
 
   useEffect(() => {
     if (isPaused || timeLeft <= 0) {
@@ -77,10 +73,10 @@ export const SoundMeditationExercise = ({ onComplete, duration = 300 }: SoundMed
 
           <div className="flex gap-3 justify-center">
             <Button variant="outline" onClick={() => setIsPaused(!isPaused)}>
-              {isPaused ? "Продолжить" : "Пауза"}
+              {isPaused ? t('soundMeditation.continue') : t('soundMeditation.pause')}
             </Button>
             <Button variant="outline" onClick={onComplete}>
-              Завершить
+              {t('soundMeditation.complete')}
             </Button>
           </div>
         </div>

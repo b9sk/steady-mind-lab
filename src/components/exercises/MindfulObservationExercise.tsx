@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Brain } from "lucide-react";
 import { useWakeLock } from "@/hooks/use-wake-lock";
+import { useTranslation } from "react-i18next";
 
 interface MindfulObservationExerciseProps {
   onComplete: () => void;
@@ -11,24 +12,12 @@ interface MindfulObservationExerciseProps {
 
 export const MindfulObservationExercise = ({ onComplete, duration = 600 }: MindfulObservationExerciseProps) => {
   useWakeLock();
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = useState(duration);
   const [isPaused, setIsPaused] = useState(false);
   const [currentPrompt, setCurrentPrompt] = useState(0);
 
-  const prompts = [
-    "Просто наблюдайте за своим дыханием",
-    "Заметьте любые мысли без осуждения",
-    "Отметьте физические ощущения в теле",
-    "Наблюдайте эмоции как облака на небе",
-    "Просто будьте здесь и сейчас",
-    "Заметьте звуки вокруг вас",
-    "Почувствуйте точки контакта тела с поверхностью",
-    "Отпустите желание что-то изменить",
-    "Вернитесь к дыханию, если отвлеклись",
-    "Заметьте температуру воздуха на коже",
-    "Наблюдайте паузу между вдохом и выдохом",
-    "Примите этот момент таким, какой он есть"
-  ];
+  const prompts = t('mindfulObservation.prompts', { returnObjects: true }) as string[];
 
   useEffect(() => {
     if (isPaused || timeLeft <= 0) {
@@ -94,10 +83,10 @@ export const MindfulObservationExercise = ({ onComplete, duration = 600 }: Mindf
 
           <div className="flex gap-3 justify-center">
             <Button variant="outline" onClick={() => setIsPaused(!isPaused)}>
-              {isPaused ? "Продолжить" : "Пауза"}
+              {isPaused ? t('mindfulObservation.continue') : t('mindfulObservation.pause')}
             </Button>
             <Button variant="outline" onClick={onComplete}>
-              Завершить
+              {t('mindfulObservation.complete')}
             </Button>
           </div>
         </div>

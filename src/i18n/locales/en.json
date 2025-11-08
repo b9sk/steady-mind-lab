@@ -1,0 +1,108 @@
+{
+  "app": {
+    "title": "Attention",
+    "subtitle": "Simple exercises to restore concentration and reduce stress"
+  },
+  "home": {
+    "exercises": "Exercises",
+    "infoText": "Regular practice of these exercises will help you restore attention, reduce chronic stress and improve overall well-being"
+  },
+  "stats": {
+    "today": "Today",
+    "total": "Total"
+  },
+  "exercise": {
+    "start": "Start",
+    "startExercise": "Start exercise",
+    "back": "Back",
+    "completed": "Exercise completed!",
+    "completedMessage": "Great job! Regular practice will help you improve your concentration.",
+    "backToHome": "Back to home",
+    "benefits": "Exercise benefits:",
+    "duration": "Duration: {{minutes}} minutes",
+    "minutes": "min"
+  },
+  "exercises": {
+    "breathing-478": {
+      "title": "4-7-8 Breathing",
+      "description": "Breathing technique to reduce stress and improve concentration",
+      "benefits": [
+        "Reduces stress and anxiety levels",
+        "Helps calm the nervous system",
+        "Improves sleep quality",
+        "Increases concentration ability"
+      ]
+    },
+    "visual-focus": {
+      "title": "Visual Focus",
+      "description": "Exercise for training sustained attention",
+      "benefits": [
+        "Develops attention sustainability",
+        "Improves visual concentration",
+        "Trains focus retention ability",
+        "Increases mindfulness"
+      ]
+    },
+    "sound-meditation": {
+      "title": "Sound Meditation",
+      "description": "Mindful listening practice to develop concentration",
+      "benefits": [
+        "Develops auditory attention",
+        "Improves ability to distinguish details",
+        "Calms the mind",
+        "Trains mindful presence"
+      ]
+    },
+    "mindful-observation": {
+      "title": "Mindful Observation",
+      "description": "Practice of observing thoughts and sensations without reaction",
+      "benefits": [
+        "Develops metacognitive skills",
+        "Improves emotional regulation",
+        "Reduces impulsivity",
+        "Increases overall mindfulness"
+      ]
+    }
+  },
+  "breathing": {
+    "inhale": "Inhale",
+    "hold": "Hold",
+    "exhale": "Exhale",
+    "description": "Follow the breathing rhythm: inhale for 4 seconds, hold for 7 seconds, exhale for 8 seconds",
+    "complete": "Complete"
+  },
+  "visualFocus": {
+    "instruction": "Focus your gaze on the center point. Try to maintain steady attention without distraction.",
+    "pause": "Pause",
+    "continue": "Continue",
+    "complete": "Complete"
+  },
+  "soundMeditation": {
+    "instruction": "Close your eyes and focus on the sounds. Don't analyze them, just notice.",
+    "pause": "Pause",
+    "continue": "Continue",
+    "complete": "Complete",
+    "sounds": [
+      "Notice distant sounds",
+      "Notice nearby sounds",
+      "Notice sounds inside your body",
+      "Notice the silence between sounds",
+      "Return to distant sounds",
+      "Observe all sounds as a whole"
+    ]
+  },
+  "mindfulObservation": {
+    "instruction": "Sit comfortably, close your eyes and observe your internal experience without judgment.",
+    "pause": "Pause",
+    "continue": "Continue",
+    "complete": "Complete",
+    "prompts": [
+      "Simply observe your breathing",
+      "Notice sensations in your body",
+      "Notice your thoughts as clouds in the sky",
+      "Observe emotions without attachment",
+      "Return attention to breathing",
+      "Observe the space between thoughts"
+    ]
+  }
+}

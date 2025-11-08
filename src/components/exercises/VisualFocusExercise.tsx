@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Eye } from "lucide-react";
 import { useWakeLock } from "@/hooks/use-wake-lock";
+import { useTranslation } from "react-i18next";
 
 interface VisualFocusExerciseProps {
   onComplete: () => void;
@@ -10,6 +12,7 @@ interface VisualFocusExerciseProps {
 
 export const VisualFocusExercise = ({ onComplete, duration = 180 }: VisualFocusExerciseProps) => {
   useWakeLock();
+  const { t } = useTranslation();
   const [timeLeft, setTimeLeft] = useState(duration);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -44,8 +47,8 @@ export const VisualFocusExercise = ({ onComplete, duration = 180 }: VisualFocusE
           </div>
 
           <div className="relative">
-            <div className="w-64 h-64 mx-auto rounded-full border-4 border-primary/20 flex items-center justify-center">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent animate-pulse-soft" />
+            <div className="w-48 h-48 mx-auto rounded-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+              <Eye className="h-16 w-16 text-primary" />
             </div>
           </div>
 
@@ -54,17 +57,16 @@ export const VisualFocusExercise = ({ onComplete, duration = 180 }: VisualFocusE
               {String(minutes).padStart(2, "0")}:{String(seconds).padStart(2, "0")}
             </p>
             <p className="text-lg text-muted-foreground max-w-md mx-auto">
-              Сфокусируйте взгляд на центральной точке. Когда заметите, что отвлеклись, 
-              мягко верните внимание обратно.
+              {t('visualFocus.instruction')}
             </p>
           </div>
 
           <div className="flex gap-3 justify-center">
             <Button variant="outline" onClick={() => setIsPaused(!isPaused)}>
-              {isPaused ? "Продолжить" : "Пауза"}
+              {isPaused ? t('visualFocus.continue') : t('visualFocus.pause')}
             </Button>
             <Button variant="outline" onClick={onComplete}>
-              Завершить
+              {t('visualFocus.complete')}
             </Button>
           </div>
         </div>

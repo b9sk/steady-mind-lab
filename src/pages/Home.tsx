@@ -2,8 +2,11 @@ import { exercises } from "@/data/exercises";
 import { ExerciseCard } from "@/components/ExerciseCard";
 import { ProgressStats } from "@/components/ProgressStats";
 import { Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
       <div className="container max-w-4xl mx-auto px-4 py-8 space-y-8">
@@ -13,10 +16,10 @@ const Home = () => {
             <Sparkles className="h-8 w-8 text-primary" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Внимание
+            {t('app.title')}
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Простые упражнения для восстановления концентрации и снижения стресса
+            {t('app.subtitle')}
           </p>
         </header>
 
@@ -27,7 +30,7 @@ const Home = () => {
 
         {/* Exercises */}
         <section className="space-y-4">
-          <h2 className="text-2xl font-semibold">Упражнения</h2>
+          <h2 className="text-2xl font-semibold">{t('home.exercises')}</h2>
           <div className="grid gap-4 md:grid-cols-2">
             {exercises.map((exercise, index) => (
               <div 
@@ -44,8 +47,7 @@ const Home = () => {
         {/* Info */}
         <section className="text-center space-y-3 py-8 animate-fade-in" style={{ animationDelay: "0.6s" }}>
           <p className="text-sm text-muted-foreground max-w-xl mx-auto">
-            Регулярная практика этих упражнений поможет вам восстановить внимание, 
-            снизить хронический стресс и улучшить общее самочувствие
+            {t('home.infoText')}
           </p>
         </section>
       </div>
