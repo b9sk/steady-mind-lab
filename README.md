@@ -1,73 +1,118 @@
-# Welcome to your Lovable project
+# Attention Training App
 
-## Project info
+A web application for attention and mindfulness training through guided exercises. Built with React, TypeScript, and Tailwind CSS, featuring multi-language support and progress tracking.
 
-**URL**: https://lovable.dev/projects/df4ca6c0-2424-4fde-aa23-4eeab0f467da
+## 🌟 Features
 
-## How can I edit this code?
+- **4 Guided Exercises**: Breathing (4-7-8), Visual Focus, Sound Meditation, and Mindful Observation
+- **Multi-language Support**: Auto-detects and supports English, Spanish, Russian, and Chinese
+- **Progress Tracking**: Tracks completed sessions and daily practice statistics
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Wake Lock API**: Prevents screen from sleeping during exercises
+- **Local Storage**: All progress saved locally in the browser
 
-There are several ways of editing your application.
+## 🚀 Quick Start
 
-**Use Lovable**
+### Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/df4ca6c0-2424-4fde-aa23-4eeab0f467da) and start prompting.
+- Node.js 18+ and npm installed ([install with nvm](https://github.com/nvm-sh/nvm))
 
-Changes made via Lovable will be committed automatically to this repo.
+### Installation
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
+```bash
+# Clone the repository
 git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📚 Documentation
 
-## What technologies are used for this project?
+For detailed documentation, see the [docs/](./docs) folder:
 
-This project is built with:
+- [Getting Started](./docs/GETTING_STARTED.md) - Setup and first steps
+- [Architecture](./docs/ARCHITECTURE.md) - Project structure and patterns
+- [Features](./docs/FEATURES.md) - Detailed feature descriptions
+- [Development Guide](./docs/DEVELOPMENT.md) - Development workflow
+- [Localization](./docs/LOCALIZATION.md) - Working with translations
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 🛠 Tech Stack
 
-## How can I deploy this project?
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS with custom design system
+- **UI Components**: shadcn/ui
+- **Routing**: React Router v6
+- **Internationalization**: i18next with auto-detection
+- **State Management**: React Query for async state
+- **Icons**: Lucide React
 
-Simply open [Lovable](https://lovable.dev/projects/df4ca6c0-2424-4fde-aa23-4eeab0f467da) and click on Share -> Publish.
+## 📁 Project Structure
 
-## Can I connect a custom domain to my Lovable project?
+```
+src/
+├── components/          # Reusable UI components
+│   ├── exercises/      # Exercise-specific components
+│   └── ui/             # shadcn/ui components
+├── data/               # Static data (exercises)
+├── hooks/              # Custom React hooks
+├── i18n/               # Localization config and translations
+├── lib/                # Utility functions
+├── pages/              # Page components
+└── types/              # TypeScript type definitions
+```
 
-Yes, you can!
+## 🌐 Supported Languages
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- 🇬🇧 English (default)
+- 🇪🇸 Spanish
+- 🇷🇺 Russian
+- 🇨🇳 Chinese (Simplified)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Language is automatically detected based on browser settings.
+
+## 📱 Browser Support
+
+- Chrome/Edge 90+
+- Firefox 88+
+- Safari 14+
+- Mobile browsers (iOS Safari, Chrome Android)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/my-feature`
+3. Commit your changes: `git commit -am 'Add new feature'`
+4. Push to the branch: `git push origin feature/my-feature`
+5. Submit a pull request
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 🔗 Links
+
+- **Lovable Project**: https://lovable.dev/projects/df4ca6c0-2424-4fde-aa23-4eeab0f467da
+- **Documentation**: [docs/](./docs)
+- **Issues**: Use GitHub Issues for bug reports and feature requests
+
+## 💡 Tips
+
+- Practice exercises daily for best results
+- Start with shorter exercises (3 min) and gradually increase duration
+- Use headphones for Sound Meditation exercise
+- Enable notifications to track your practice streak
