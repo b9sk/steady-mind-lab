@@ -2,7 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { getDailyStats, getTotalSessions } from "@/lib/storage";
 import { exercises } from "@/data/exercises";
-import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { Line, LineChart, CartesianGrid, XAxis, YAxis } from "recharts";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { TrendingUp } from "lucide-react";
@@ -60,7 +60,7 @@ export const StatisticsChart = () => {
       </CardHeader>
       <CardContent>
         <ChartContainer config={chartConfig} className="h-[300px] w-full">
-          <AreaChart data={dailyStats} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+          <LineChart data={dailyStats} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
             <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
             <XAxis
               dataKey="date"
@@ -73,17 +73,18 @@ export const StatisticsChart = () => {
             <YAxis className="text-xs" />
             <ChartTooltip content={<ChartTooltipContent />} />
             {exercises.map((exercise, index) => (
-              <Area
+              <Line
                 key={exercise.id}
                 type="monotone"
                 dataKey={exercise.id}
-                stackId="1"
                 stroke={`hsl(var(--chart-${index + 1}))`}
-                fill={`hsl(var(--chart-${index + 1}))`}
-                fillOpacity={0.6}
+                strokeWidth={2}
+                dot={{ fill: `hsl(var(--chart-${index + 1}))`, r: 4 }}
+                activeDot={{ r: 6 }}
+                connectNulls={false}
               />
             ))}
-          </AreaChart>
+          </LineChart>
         </ChartContainer>
       </CardContent>
     </Card>
