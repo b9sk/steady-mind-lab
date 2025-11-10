@@ -38,6 +38,11 @@ All colors MUST be HSL.
 
     --radius: 1rem;
     
+    --chart-1: 221 83% 53%;
+    --chart-2: 280 70% 60%;
+    --chart-3: 340 75% 55%;
+    --chart-4: 24 90% 58%;
+    
     --gradient-calm: linear-gradient(135deg, hsl(195 75% 45%), hsl(180 60% 50%));
     --gradient-subtle: linear-gradient(180deg, hsl(200 25% 98%), hsl(195 30% 95%));
     --shadow-soft: 0 4px 24px -6px hsl(195 75% 45% / 0.15);
@@ -88,6 +93,12 @@ All colors MUST be HSL.
     --border: 200 15% 20%;
     --input: 200 15% 20%;
     --ring: 195 75% 50%;
+    
+    --chart-1: 221 83% 53%;
+    --chart-2: 280 70% 60%;
+    --chart-3: 340 75% 55%;
+    --chart-4: 24 90% 58%;
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

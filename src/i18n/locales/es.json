@@ -13,7 +13,15 @@
   },
   "stats": {
     "today": "Hoy",
-    "total": "Total"
+    "total": "Total",
+    "chart": {
+      "title": "Progreso en el tiempo",
+      "description": "Estadísticas de tu práctica de los últimos 7 días",
+      "total": "Total de sesiones",
+      "emptyTitle": "Aún no hay datos",
+      "emptyDescription": "Completa tu primer ejercicio para ver aquí tus estadísticas de progreso",
+      "emptyCta": "Comenzar tu primer ejercicio"
+    }
   },
   "exercise": {
     "start": "Comenzar",

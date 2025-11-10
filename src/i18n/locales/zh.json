@@ -13,7 +13,15 @@
   },
   "stats": {
     "today": "今天",
-    "total": "总计"
+    "total": "总计",
+    "chart": {
+      "title": "进度统计",
+      "description": "过去7天的练习统计",
+      "total": "总课程数",
+      "emptyTitle": "暂无数据",
+      "emptyDescription": "完成第一个练习后，您将在这里看到进度统计",
+      "emptyCta": "开始第一个练习"
+    }
   },
   "exercise": {
     "start": "开始",
